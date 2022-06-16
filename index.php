@@ -10,21 +10,21 @@ $APPLICATION->SetTitle("Новости");
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "news_list",
 		"DETAIL_URL" => "#SITE_DIR#news.php?ID=#ID#",
-		"FIELD_CODE" => array("PREVIEW_TEXT","PREVIEW_PICTURE",""),
+		"FIELD_CODE" => array(0=>"PREVIEW_TEXT",1=>"PREVIEW_PICTURE",2=>"",),
 		"FILTER_NAME" => "arrFilter",
-		"IBLOCKS" => array("1"),
+		"IBLOCKS" => array(0=>"5",),
 		"IBLOCK_SORT_BY" => "SORT",
 		"IBLOCK_SORT_ORDER" => "ASC",
 		"IBLOCK_TYPE" => "news",
 		"IBLOCK_URL" => "",
 		"NEWS_COUNT" => "10",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array(0=>"",1=>"",),
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
 	)
 );?>
-</div>
- <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</div><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

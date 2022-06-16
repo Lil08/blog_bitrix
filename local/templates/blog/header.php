@@ -65,26 +65,35 @@
         </ul>
     </div>
 
-    <div class="fh5co-menu">
-        <div class="fh5co-box">
-            <h3 class="heading">Categories</h3>
-            <ul>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Style</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a href="#">Food &amp; Drinks</a></li>
-                <li><a href="#">Culture</a></li>
-            </ul>
-        </div>
-        <div class="fh5co-box">
-            <h3 class="heading">Search</h3>
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Type a keyword">
-                </div>
-            </form>
-        </div>
-    </div>
+    <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "cat_list", Array(
+        "ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
+        "CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+        "CACHE_GROUPS" => "N",	// Учитывать права доступа
+        "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+        "CACHE_TYPE" => "A",	// Тип кеширования
+        "COUNT_ELEMENTS" => "N",	// Показывать количество элементов в разделе
+        "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
+        "FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
+        "IBLOCK_ID" => "5",	// Инфоблок
+        "IBLOCK_TYPE" => "news",	// Тип инфоблока
+        "SECTION_CODE" => "",	// Код раздела
+        "SECTION_FIELDS" => array(	// Поля разделов
+            0 => "",
+            1 => "",
+        ),
+        "SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
+        "SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+        "SECTION_USER_FIELDS" => array(	// Свойства разделов
+            0 => "",
+            1 => "",
+        ),
+        "SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+        "TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
+        "VIEW_MODE" => "LINE",	// Вид списка подразделов
+    ),
+        false
+    );?><br>
+
 </div>
 <!-- END #fh5co-offcanvas -->
 <header id="fh5co-header">
